@@ -38,7 +38,14 @@ public class StudentService {
     }
 
     public List<StudentResponseDTO> getStudentsByClassroomId(Long classroomId){
-        return studentRepository.findByClassroomId(classroomId);
+        var students = studentRepository.findByClassroomId(classroomId);
+        return students.stream().map(student -> new StudentResponseDTO(
+                student.getId(),
+                student.getName(),
+                student.getAge(),
+                student.getClassroomId(),
+                student.getRegistration()
+        )).toList();
     }
 
     public StudentResponseDTO postStudent(StudentModel studentModel) {
