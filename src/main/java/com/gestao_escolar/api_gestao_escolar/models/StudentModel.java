@@ -22,7 +22,7 @@ public class StudentModel {
     @GeneratedValue
     private Long id;
     private String name;
-    private String registration;
     private Integer age;
     private Long classroomId;
+    private String registration;
 }
