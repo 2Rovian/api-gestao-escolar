@@ -23,6 +23,7 @@ public class GradeModel {
 
     public GradeModel(Long studentId, String studentName, String subject, BigDecimal value) {
         this.studentId = studentId;
+        this.studentName = studentName;
         this.subject = subject;
         this.value = value;
     }
