@@ -25,4 +25,11 @@ public class StudentModel {
     private Integer age;
     private Long classroomId;
     private String registration;
+
+    public StudentModel(String name, Integer age, Long classroomId, String registration) {
+        this.name = name;
+        this.age = age;
+        this.classroomId = classroomId;
+        this.registration = registration;
+    }
 }

@@ -1,5 +1,6 @@
 package com.gestao_escolar.api_gestao_escolar.services;
 
+import com.gestao_escolar.api_gestao_escolar.dtos.Student.StudentRequestDTO;
 import com.gestao_escolar.api_gestao_escolar.dtos.Student.StudentResponseDTO;
 import com.gestao_escolar.api_gestao_escolar.models.StudentModel;
 import com.gestao_escolar.api_gestao_escolar.repositories.StudentRepository;
@@ -48,18 +49,26 @@ public class StudentService {
         )).toList();
     }
 
-    public StudentResponseDTO postStudent(StudentModel studentModel) {
-        studentRepository.save(studentModel);
+    public StudentResponseDTO postStudent(StudentRequestDTO student) {
+        var newStudent = studentRepository.save(
+                new StudentModel(
+                        student.name(),
+                        student.age(),
+                        student.classroomId(),
+                        student.registration()
+                )
+        );
+
         return new StudentResponseDTO(
-                studentModel.getId(),
-                studentModel.getName(),
-                studentModel.getAge(),
-                studentModel.getClassroomId(),
-                studentModel.getRegistration()
+                newStudent.getId(),
+                newStudent.getName(),
+                newStudent.getAge(),
+                newStudent.getClassroomId(),
+                newStudent.getRegistration()
         );
     }
 
-    public void deleteStudent(Long studentId) {
+    public void deleteStudentById(Long studentId) {
         studentRepository.deleteById(studentId);
     }
 }
