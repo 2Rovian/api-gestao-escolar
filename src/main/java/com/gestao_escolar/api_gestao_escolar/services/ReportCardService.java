@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ReportCardService {
@@ -33,7 +34,7 @@ public class ReportCardService {
         var reportCard = gradeCalculator.generateReportCard(studentId, grades);
 
         return new ReportCardResponseDTO(
-                studentId,
+                UUID.randomUUID().toString(),
                 student.get().getName(),
                 studentId,
                 student.get().getClassroomId(),

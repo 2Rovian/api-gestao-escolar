@@ -16,8 +16,8 @@ public class ReportCardController {
         this.reportCardService = reportCardService;
     }
 
-    @GetMapping("/{reportCardId}")
-    public ResponseEntity<ReportCardResponseDTO> getReportCard(@PathVariable Long reportCardId) {
-        return ResponseEntity.ok(reportCardService.generate(reportCardId));
+    @GetMapping("/{studentId}")
+    public ResponseEntity<ReportCardResponseDTO> getReportCard(@PathVariable Long studentId) {
+        return ResponseEntity.ok(reportCardService.generate(studentId));
     }
 }

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public record ReportCardResponseDTO(
-        Long id,
+        String id,
         String studentName,
         Long studentId,
         Long studentClassroomId,
