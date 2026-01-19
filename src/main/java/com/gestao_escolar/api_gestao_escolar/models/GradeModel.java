@@ -17,10 +17,11 @@ public class GradeModel {
     @GeneratedValue
     private Long id;
     private Long studentId;
+    private String studentName;
     private String subject;
     private BigDecimal value;
 
-    public GradeModel(Long studentId, String subject, BigDecimal value) {
+    public GradeModel(Long studentId, String studentName, String subject, BigDecimal value) {
         this.studentId = studentId;
         this.subject = subject;
         this.value = value;

@@ -7,6 +7,7 @@ import com.gestao_escolar.api_gestao_escolar.repositories.GradeRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,7 @@ public class GradeService {
         var newGrade = gradeRepository.save(
                 new GradeModel(
                         grade.studentId(),
+                        grade.studentName(),
                         grade.subject(),
                         grade.value())
         );
@@ -27,6 +29,7 @@ public class GradeService {
         return new GradeResponseDTO(
                 newGrade.getId(),
                 newGrade.getStudentId(),
+                grade.studentName(),
                 newGrade.getSubject(),
                 newGrade.getValue()
         );
@@ -36,9 +39,20 @@ public class GradeService {
         return gradeRepository.findById(gradeId).map(grade -> new GradeResponseDTO(
                 grade.getId(),
                 grade.getStudentId(),
+                grade.getStudentName(),
                 grade.getSubject(),
                 grade.getValue()
         ));
+    }
+
+    public List<GradeResponseDTO> getGradeByStudentId(Long studentId) {
+        return gradeRepository.findByStudentId(studentId).stream().map(grade -> new GradeResponseDTO(
+                grade.getId(),
+                grade.getStudentId(),
+                grade.getStudentName(),
+                grade.getSubject(),
+                grade.getValue()
+        )).toList();
     }
 
     public void deleteGrade(Long gradeId) {
