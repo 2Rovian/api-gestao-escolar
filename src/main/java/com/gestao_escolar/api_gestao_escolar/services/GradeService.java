@@ -1,12 +1,11 @@
 package com.gestao_escolar.api_gestao_escolar.services;
 
-import com.gestao_escolar.api_gestao_escolar.dtos.Grade.GradeRequestDTO;
-import com.gestao_escolar.api_gestao_escolar.dtos.Grade.GradeResponseDTO;
+import com.gestao_escolar.api_gestao_escolar.dtos.grade.GradeRequestDTO;
+import com.gestao_escolar.api_gestao_escolar.dtos.grade.GradeResponseDTO;
 import com.gestao_escolar.api_gestao_escolar.models.GradeModel;
 import com.gestao_escolar.api_gestao_escolar.repositories.GradeRepository;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 

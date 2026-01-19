@@ -1,11 +1,8 @@
 package com.gestao_escolar.api_gestao_escolar.services;
 
-import com.gestao_escolar.api_gestao_escolar.dtos.Classroom.ClassroomRequestDTO;
-import com.gestao_escolar.api_gestao_escolar.dtos.Classroom.ClassroomResponseDTO;
-import com.gestao_escolar.api_gestao_escolar.dtos.Student.StudentRequestDTO;
-import com.gestao_escolar.api_gestao_escolar.dtos.Student.StudentResponseDTO;
+import com.gestao_escolar.api_gestao_escolar.dtos.classroom.ClassroomRequestDTO;
+import com.gestao_escolar.api_gestao_escolar.dtos.classroom.ClassroomResponseDTO;
 import com.gestao_escolar.api_gestao_escolar.models.ClassroomModel;
-import com.gestao_escolar.api_gestao_escolar.models.StudentModel;
 import com.gestao_escolar.api_gestao_escolar.repositories.ClassroomRepository;
 import org.springframework.stereotype.Service;
 

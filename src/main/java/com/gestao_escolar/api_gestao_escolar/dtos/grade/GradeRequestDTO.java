@@ -1,4 +1,4 @@
-package com.gestao_escolar.api_gestao_escolar.dtos.Grade;
+package com.gestao_escolar.api_gestao_escolar.dtos.grade;
 
 import java.math.BigDecimal;
 

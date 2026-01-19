@@ -19,11 +19,4 @@ public class ClassroomModel {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "classroom")
-    private List<StudentModel> students = new ArrayList<>();
-
-    public ClassroomModel(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }

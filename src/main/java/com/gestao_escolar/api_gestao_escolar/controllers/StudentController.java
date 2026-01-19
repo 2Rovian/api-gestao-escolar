@@ -1,7 +1,7 @@
 package com.gestao_escolar.api_gestao_escolar.controllers;
 
-import com.gestao_escolar.api_gestao_escolar.dtos.Student.StudentRequestDTO;
-import com.gestao_escolar.api_gestao_escolar.dtos.Student.StudentResponseDTO;
+import com.gestao_escolar.api_gestao_escolar.dtos.student.StudentRequestDTO;
+import com.gestao_escolar.api_gestao_escolar.dtos.student.StudentResponseDTO;
 import com.gestao_escolar.api_gestao_escolar.services.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,7 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getStudentsByClassroomId(classroomId));
     }
 
-    @GetMapping
+    @GetMapping("/{studentId}")
     public ResponseEntity<Optional<StudentResponseDTO>> getStudentById(@PathVariable Long studentId) {
         return ResponseEntity.ok(studentService.getStudentById(studentId));
     }
