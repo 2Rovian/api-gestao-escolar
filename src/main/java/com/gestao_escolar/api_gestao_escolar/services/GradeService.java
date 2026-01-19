@@ -45,7 +45,7 @@ public class GradeService {
         ));
     }
 
-    public List<GradeResponseDTO> getGradeByStudentId(Long studentId) {
+    public List<GradeResponseDTO> getGradesByStudentId(Long studentId) {
         return gradeRepository.findByStudentId(studentId).stream().map(grade -> new GradeResponseDTO(
                 grade.getId(),
                 grade.getStudentId(),
