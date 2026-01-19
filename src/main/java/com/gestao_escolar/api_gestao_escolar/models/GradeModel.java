@@ -1,9 +1,6 @@
 package com.gestao_escolar.api_gestao_escolar.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,4 +19,10 @@ public class GradeModel {
     private Long studentId;
     private String subject;
     private BigDecimal value;
+
+    public GradeModel(Long studentId, String subject, BigDecimal value) {
+        this.studentId = studentId;
+        this.subject = subject;
+        this.value = value;
+    }
 }
