@@ -6,7 +6,7 @@ Este projeto foi desenvolvido como solução para o Desafio Técnico da StralooH
 O objetivo é implementar um sistema centralizado capaz de gerenciar alunos, turmas e notas, além de consolidar essas informações para gerar o boletim escolar de um aluno.
 
 ---
-📌 Visão Geral
+## 📌 Visão Geral
 
 A aplicação consiste em um único serviço backend, responsável por:
 
